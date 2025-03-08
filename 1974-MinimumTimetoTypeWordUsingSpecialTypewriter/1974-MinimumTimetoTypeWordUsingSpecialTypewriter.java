@@ -8,13 +8,10 @@ class Solution {
          for(char targetChar : word.toCharArray()){
 
             int forward = Math.abs((int)(targetChar - pointerPosition ));
-            System.out.println(forward);
-            int backward = 26 - forward ;
-            System.out.println(backward);
-
+             int backward = 26 - forward ;
+ 
             int optimumMovement = Math.min(forward , backward);
-            System.out.println(optimumMovement);
-
+ 
             seconds = seconds + optimumMovement ;
             pointerPosition = targetChar;
         }
