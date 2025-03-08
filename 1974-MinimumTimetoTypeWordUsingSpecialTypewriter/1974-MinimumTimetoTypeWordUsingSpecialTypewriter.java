@@ -1,14 +1,14 @@
 class Solution {
     public int minTimeToType(String word) {
-        int time = 0;
-        char curr = 'a';
-        for(int i=0;i<word.length();i++){
-            char goal = word.charAt(i);
-            int dist = Math.abs(goal - curr);
-            int circ = 26 - dist;
-            time = time + 1 +Math.min(circ,dist);
-            curr = goal;
+
+        int seconds =0;
+
+        char pointerPosition = 'a';
+
+         for(char targetChar : word.toCharArray()){
+            seconds += 1+Math.min(Math.abs((int)(targetChar - pointerPosition )) , 26 - Math.abs((int)(targetChar - pointerPosition ))) ;
+            pointerPosition = targetChar;
         }
-        return time;
-    }
+       return seconds;
+}
 }
