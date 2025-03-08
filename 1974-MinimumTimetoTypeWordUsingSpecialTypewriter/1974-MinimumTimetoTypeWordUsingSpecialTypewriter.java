@@ -6,13 +6,7 @@ class Solution {
         char pointerPosition = 'a';
 
          for(char targetChar : word.toCharArray()){
-
-            int forward = Math.abs((int)(targetChar - pointerPosition ));
-             int backward = 26 - forward ;
- 
-            int optimumMovement = Math.min(forward , backward);
- 
-            seconds = seconds + optimumMovement ;
+            seconds = seconds + Math.min(Math.abs((int)(targetChar - pointerPosition )) , 26 - Math.abs((int)(targetChar - pointerPosition ))) ;
             pointerPosition = targetChar;
         }
        return seconds;
