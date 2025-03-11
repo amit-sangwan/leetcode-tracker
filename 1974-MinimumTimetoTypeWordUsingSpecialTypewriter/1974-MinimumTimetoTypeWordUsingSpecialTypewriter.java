@@ -1,14 +1,17 @@
 class Solution {
     public int minTimeToType(String word) {
 
-        int seconds =0;
+        int res = word.length();
+        char pointer = 'a';
 
-        char pointerPosition = 'a';
+        for(char c : word.toCharArray()){
+        
+          int frw = Math.abs( (int)c - (int)pointer);
+          int bck = 26-frw ;
+          res +=  Math.min(frw ,bck);
 
-         for(char targetChar : word.toCharArray()){
-            seconds += 1+Math.min(Math.abs((int)(targetChar - pointerPosition )) , 26 - Math.abs((int)(targetChar - pointerPosition ))) ;
-            pointerPosition = targetChar;
+          pointer = c ;
         }
-       return seconds;
-}
+        return res;
+    }
 }
