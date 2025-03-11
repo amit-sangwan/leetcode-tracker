@@ -1,7 +1,7 @@
 class Solution {
     public int minTimeToType(String word) {
 
-        int res = word.length();
+        int res = 0;
         char pointer = 'a';
 
         for(char c : word.toCharArray()){
@@ -11,6 +11,7 @@ class Solution {
           res +=  Math.min(frw ,bck);
 
           pointer = c ;
+          res+=1;
         }
         return res;
     }
