@@ -1,10 +1,9 @@
-// Last updated: 18/08/2025, 01:53:30
+// Last updated: 18/08/2025, 01:54:07
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int l = nums.length;
 
-        for (int i = 0; i < l; i++) {
-            for (int j = i + 1; j < l; j++) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
                     return new int[] { i, j };
                 }
