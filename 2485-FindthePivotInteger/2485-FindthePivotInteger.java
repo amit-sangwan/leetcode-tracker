@@ -1,20 +1,14 @@
-// Last updated: 17/08/2025, 18:41:45
+// Last updated: 18/08/2025, 00:42:48
 class Solution {
     public int pivotInteger(int n) {
-        int min = 0;
-        int fin = n ;
-        for (int max = 1; max <= fin; max++) {
-            min += max ; 
-            System.out.println(
-                    min
-            );
-
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += i;
         }
-        int x = (int) Math.sqrt(min);
-        if(x*x == min){
-            return x;
+        int pi = (int) Math.sqrt(sum);
+        if (pi * pi == sum) {
+            return pi;
         }
-        
-        return -1 ;
+        return -1;
     }
 }
