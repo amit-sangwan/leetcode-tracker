@@ -1,4 +1,4 @@
-// Last updated: 18/08/2025, 12:58:05
+// Last updated: 18/08/2025, 12:58:28
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
 
@@ -11,7 +11,6 @@ class Solution {
     }
 
     public void sortArr(int[] arr , int len){
-        System.out.println(len);
         int temp = 0 ;
         for(int i = 0 ; i <= len ; i++){
             for(int j = i+1 ; j <=len ; j++){
@@ -22,8 +21,6 @@ class Solution {
                 }
             }
         }
-        for(int j : arr){
-            System.out.print(j);
-        }
+    
     }
 }
