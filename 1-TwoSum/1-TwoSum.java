@@ -1,9 +1,24 @@
-// Last updated: 18/08/2025, 21:13:10
+// Last updated: 18/08/2025, 21:40:28
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int len = nums.length ;
+        int len = nums.length;
 
-        for(int i = 0 ; i < len ; i++){
+        HashMap<Integer, Integer> hmap = new HashMap<>();
+
+        for (int i = 0; i < len; i++) {
+
+            int find = target - nums[i];
+
+            if (hmap.containsKey(find)) {
+                int k = hmap.get(find);
+                return new int[] { i, k };
+            }
+            hmap.put(nums[i], i);
+
+        }
+
+        /*   **** Brute Force ****
+             for(int i = 0 ; i < len ; i++){
             int find = target - nums[i] ; 
             for(int j = i+1 ; j < len ; j++){
                 if(nums[j] == find){
@@ -11,6 +26,9 @@ class Solution {
                 }
             }
         }
-        return new int[]{0,0} ;
+        
+         */
+
+        return new int[] { 0, 0 };
     }
 }
