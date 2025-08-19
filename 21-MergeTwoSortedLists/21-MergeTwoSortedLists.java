@@ -1,4 +1,4 @@
-// Last updated: 18/08/2025, 23:39:10
+// Last updated: 19/08/2025, 13:38:32
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -11,25 +11,27 @@
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-    ListNode dummy = new ListNode();
-    ListNode current = dummy ;
 
-    while(list1 != null && list2 != null){
+        ListNode dummy = new ListNode();
+        ListNode current = dummy;
 
-        if(list1.val < list2.val){
-            current.next = list1 ; 
-            list1 = list1.next ;
-        }else{
-            current.next = list2 ;
-            list2 = list2.next ;
+        while (list1 != null && list2 != null) {
+            System.out.println("List 1: " + list1.val + "List 2: " + list2.val);
+            if (list1.val > list2.val) {
+                current.next = list2;
+                list2 = list2.next;
+            } else {
+                current.next = list1;
+                list1 = list1.next;
+            }
+            current = current.next;
         }
-        current = current.next; // move current forward
+        if (list1 == null) {
+            current.next = list2;
+        }
+        if (list2 == null) {
+            current.next = list1;
+        }
+        return dummy.next;
     }
-
-    if(list1 != null){current.next = list1;}
-    if(list2 != null){current.next = list2;}    
-    
-    return dummy.next ;
-    }
-        
 }
