@@ -1,13 +1,23 @@
-// Last updated: 21/08/2025, 00:55:57
+// Last updated: 21/08/2025, 01:05:01
 class Solution {
-    public boolean rotateString(String s, String goal) {
-        if(goal.length() != s.length()){
-            return false ;
+    public String reverseWords(String s) {
+        String[] arr = s.split(" ");
+        for (String str : arr) {
+            System.out.println(str);
         }
-        String f = s + s ; 
-        if(f.contains(goal)){
-            return true;
+        StringBuilder sb = new StringBuilder();
+        System.out.println(sb);
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i].length() < 1) {
+                continue;
+            }
+            sb.append(arr[i].trim());
+            sb.append(" ");
+            System.out.println("***** " + sb + "***** ");
+
         }
-        return false;
+        System.out.println("FINAL::: " + sb + "***** ");
+
+        return sb.toString().trim();
     }
 }
