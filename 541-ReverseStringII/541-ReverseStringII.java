@@ -1,0 +1,36 @@
+// Last updated: 21/08/2025, 00:40:52
+class Solution {
+    public String reverseStr(String s, int k) {
+
+        String[] parts = s.split("(?<=\\G.{" + k + "})");
+        for (String s1 : parts) {
+            System.out.println(s1);
+        }
+        StringBuilder sb = new StringBuilder();
+        int i = 2;
+        for (String str : parts) {
+            if (i % 2 == 0) {
+                sb.append(rev(str));
+                System.out.println("in if block");
+                System.out.println(sb);
+
+            } else {
+                sb.append(str);
+                System.out.println("in else block");
+                System.out.println(sb);
+            }
+            i++;
+               System.out.println("***********");
+         }
+        System.out.println(sb.toString());
+        return sb.toString();
+    }
+
+    public String rev(String str) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            sb.append(str.charAt(i));
+        }
+        return sb.toString();
+    }
+}
