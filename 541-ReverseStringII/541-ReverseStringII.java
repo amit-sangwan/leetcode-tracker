@@ -1,4 +1,4 @@
-// Last updated: 21/08/2025, 00:41:28
+// Last updated: 21/08/2025, 00:44:41
 class Solution {
     public String reverseStr(String s, int k) {
 
@@ -8,7 +8,7 @@ class Solution {
         int i = 2;
         for (String str : parts) {
             if (i % 2 == 0) {
-                sb.append(rev(str));
+                sb.append(new StringBuilder(str).reverse().toString());
             } else {
                 sb.append(str);
 
