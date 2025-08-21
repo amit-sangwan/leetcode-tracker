@@ -1,26 +1,17 @@
+// Last updated: 21/08/2025, 14:38:14
 class Solution {
-    int res = 0 ;
-
     public int minimumMoves(String s) {
-       
-       if(s.length() <4 && s.contains("X")){
-        return 1;
-       }
-       if(s.indexOf("X")==-1){
-        return 0;
-       }
-       return replace(s);
-       }
-
-
-    public int replace(String str){
-
-        if( str.indexOf("X")+2 < str.length() && str.indexOf("X") != -1){
-             res += 1;
-             replace(str.substring(str.indexOf("X")+3 , str.length()));
-        }else if(str.contains("X")){
-            res+=1;
+        int i = 0 ; 
+        int sum = 0 ;
+        while(i< s.length()){
+            if(s.charAt(i)=='X'){
+                sum += 1;
+                i +=3;
+                continue;
+            }
+            i++;
         }
-        return res;
-    }
+        return sum;
+      
+}
 }
