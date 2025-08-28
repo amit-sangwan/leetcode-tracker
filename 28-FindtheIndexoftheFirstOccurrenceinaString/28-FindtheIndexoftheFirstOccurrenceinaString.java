@@ -1,23 +1,23 @@
-// Last updated: 28/08/2025, 10:06:56
+// Last updated: 28/08/2025, 10:32:17
 class Solution {
     public int strStr(String haystack, String needle) {
-        if (!haystack.contains(needle)) {
-            return -1;
+        if(!haystack.contains(needle)){
+            return -1 ;
         }
-        if (needle.equals(haystack)) {
+        if(haystack.equals(needle)){
             return 0;
         }
 
-        for (int i = 0; i < haystack.length(); i++) {
+        int h = haystack.length();
+        int n = needle.length();
 
-            int j = 0;
-            while (j < needle.length() && haystack.charAt(i + j)==needle.charAt(j)) {
-                j += 1;
-            }
-            if (j == needle.length()) {
-                return i;
+        for(int i =  0 ; i <= h-n ; i++){
+            System.out.println(haystack.substring(i,i+n));
+            if(haystack.substring(i,i+n).equals(needle)){
+                return i ;
             }
         }
         return 1;
-    }
+
+}
 }
