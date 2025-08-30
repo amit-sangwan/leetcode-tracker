@@ -1,7 +1,7 @@
-// Last updated: 31/08/2025, 01:00:42
+// Last updated: 31/08/2025, 01:01:14
 class Solution {
     public String greatestLetter(String s) {
-
+        String res = "";
         Set<Character> set = new HashSet<>();
         for (char c : s.toCharArray()) {
             set.add(c);
@@ -10,11 +10,11 @@ class Solution {
         for (char z = 'Z'; z >= 'A'; z--) {
 
             if (set.contains(z) && set.contains(Character.toLowerCase(z))) {
-                return new StringBuilder().append(z).toString();
+                return res+z ;
             }
 
         }
-        return "";
+        return res ;
     }
 
 }
