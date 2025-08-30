@@ -1,8 +1,7 @@
-// Last updated: 31/08/2025, 01:03:02
+// Last updated: 31/08/2025, 01:03:15
 class Solution {
     public String greatestLetter(String s) {
-        String res = "";
-        Set<Character> set = new HashSet<>();  // HashSet<Character> set = new HashSet<>(); -> HashSet H and S in caps
+         Set<Character> set = new HashSet<>();  // HashSet<Character> set = new HashSet<>(); -> HashSet H and S in caps
         for (char c : s.toCharArray()) {       // Character
             set.add(c);
         }
@@ -14,7 +13,7 @@ class Solution {
             }
 
         }
-        return res ;
+        return "" ;
     }
 
 }
