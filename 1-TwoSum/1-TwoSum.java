@@ -1,23 +1,23 @@
-// Last updated: 30/08/2025, 18:01:09
+// Last updated: 31/08/2025, 00:16:38
 class Solution {
     public int[] twoSum(int[] nums, int target) {
 
-        int res[] = new int[2];
-        //[2,7,11,15]
-        // len  = 4 
-        // i < 3
-        for (int i = 0; i < nums.length - 1; i++) {
+        int len = nums.length;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        System.out.println("Map initiated: " + map);
+        for (int i = 0; i < len; i++) {
 
-            for (int j = i + 1; j < nums.length; j++) {
+            int need = target - nums[i];
+            System.out.println("Current number: " + nums[i] + " Number Required: " + (target - nums[i]) );
+            System.out.println(map.containsKey(need));
+            if (map.containsKey(need)) {
 
-                if (nums[i] + nums[j] == target) {
-                    res[0] = i;
-                    res[1] = j;
-                }
-
+                return new int[] { i, map.get(need) };
             }
-
+            map.put(nums[i], i);
+            System.out.println("********* End of Loop Cycle *******");
         }
-        return res;
+        return new int[] { 0, 0 };
+
     }
 }
