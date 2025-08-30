@@ -1,16 +1,16 @@
-// Last updated: 31/08/2025, 01:01:14
+// Last updated: 31/08/2025, 01:03:02
 class Solution {
     public String greatestLetter(String s) {
         String res = "";
-        Set<Character> set = new HashSet<>();
-        for (char c : s.toCharArray()) {
+        Set<Character> set = new HashSet<>();  // HashSet<Character> set = new HashSet<>(); -> HashSet H and S in caps
+        for (char c : s.toCharArray()) {       // Character
             set.add(c);
         }
         System.out.print(set);
         for (char z = 'Z'; z >= 'A'; z--) {
 
             if (set.contains(z) && set.contains(Character.toLowerCase(z))) {
-                return res+z ;
+                return Character.toString(z) ;
             }
 
         }
